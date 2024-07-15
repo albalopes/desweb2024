@@ -35,3 +35,15 @@ def verificalogin():
 @app.route('/verificaidade2/<int:idade>')
 def verificaidade2(idade):
     return render_template('verificaidade2.html', idade=idade)
+
+@app.route('/alergias')
+def alergias():
+    return render_template('alergias.html')
+
+@app.route('/confirmaralergias', methods=['POST'])
+def confirmaralergias():
+    alergias = request.form.getlist('alergia')
+    for x in alergias:
+        print(x)
+
+    return render_template('confirmaralergias.html', alergias=alergias)

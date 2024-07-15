@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registro de alergias</title>
+</head>
+<body>
+  <h2>Informe as alergias que possui:</h2>
+	<form method="POST" action="{{url_for('confirmaralergias')}}">
+		<label>
+			<input type="checkbox" name="alergia" value="Leite">Leite</label>
+		<label>
+			<input type="checkbox" name="alergia" value="Gluten">Glúten</label>
+		<label>
+			<input type="checkbox" name="alergia" value="Ovos">Ovos</label>
+		<label>
+			<input type="checkbox" name="alergia" value="Peixe">Peixe</label>
+		<label>
+			<input type="checkbox" name="alergia" value="Frutos_do_mar">Frutos do mar</label>
+		<label>
+			<input type="checkbox" name="alergia" value="Soja">Soja</label>
+		<br>
+		<button type="submit">Enviar</button>
+	</form>
+</body>
+</html>
