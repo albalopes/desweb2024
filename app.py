@@ -22,12 +22,16 @@ def arearestrita(admin):
 def login():
     return render_template('login.html')
 
-@app.route('/verificalogin')
+@app.route('/verificalogin', methods=['POST'])
 def verificalogin():
     login = request.form['login']
     senha = request.form['senha']
 
-    if login=='alba' and senha='12345':
-        return render_template('admim.html')
+    if login=='alba' and senha=='12345':
+        return render_template('admin.html')
     else:
         return 'Login ou senha incorretos'
+
+@app.route('/verificaidade2/<int:idade>')
+def verificaidade2(idade):
+    return render_template('verificaidade2.html', idade=idade)
