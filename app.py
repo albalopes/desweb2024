@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -17,3 +17,17 @@ def arearestrita(admin):
         return render_template('admin.html')
     else:
         return render_template('comum.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/verificalogin')
+def verificalogin():
+    login = request.form['login']
+    senha = request.form['senha']
+
+    if login=='alba' and senha='12345':
+        return render_template('admim.html')
+    else:
+        return 'Login ou senha incorretos'
